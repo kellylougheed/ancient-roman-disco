@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ancient Roman Disco Party</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+            <!--<img id="wood" src="images/wood_panel.jpg">-->
+            <a-asset-item id="templeobj" src="temple.obj"></a-asset-item>
+        	<a-asset-item id="templemtl" src="temple.mtl"></a-asset-item>
+        </a-assets>
+        <a-sky color="black"></a-sky>
+        <a-entity star-system></a-entity>
+        
+        <a-light id="light" color="hsl(0,100%, 50%)" position="-1 1 0" visible="false"></a-light>
+        
+        <a-entity id="defaultLight1" light="type: ambient; color: #BBB"></a-entity>
+        <a-entity id="defaultLight2" light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+        
+        <a-plane material="src:road.jpg; repeat: 10 20" position="0 -3 3" rotation="280 0 0" width="19" height="35"></a-plane>
+        <a-plane color="darkorange" position="0 0 -12" rotation="280 0 0" width="16.5" height="5"></a-plane>
+        
+        <a-obj-model id="temple" src="#templeobj" mtl="#templemtl" position="0 -1 -19" scale=".1 .1 .1" rotation="270 0 0" color="orange"></a-obj-model>
+        
+        <a-text id="text" color="hsl(0,100%, 50%)" value="Click the temple for a disco party" position="-6 1 -5" width="4">
+            <a-animation attribute="position" from="-6.75 1 -5" to="-5.75 1 -5" dur="2000" easing="linear" repeat="indefinite" direction="alternate"></a-animation>
+        </a-text>
+
+        <a-plane id="dancer1" src="roman1.png" rotation="0 0 0" position="-3 1 -9" height="5" width="2" transparent="true"></a-plane>
+
+        <a-plane id="dancer2" src="roman2.png" rotation="0 0 0" position="2 1 -4" height="5" width="2" transparent="true"></a-plane>
+        
+        <a-camera>
+            <a-cursor color="darkorange"></a-cursor>
+        </a-camera>
+    </a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>
