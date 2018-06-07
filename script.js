@@ -15,7 +15,7 @@ window.onload = function() {
         clearInterval(textColorChange);
         document.querySelector("#defaultLight1").setAttribute("visible", "false");
         mainLight.setAttribute("visible", "false");
-        document.querySelector("a-cursor").setAttribute("color", "#333");
+        document.querySelector("a-cursor").setAttribute("visible", "false");
         disco.play();
         setInterval(function() {
             disco.play();
